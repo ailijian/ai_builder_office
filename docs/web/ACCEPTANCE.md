@@ -1,41 +1,16 @@
-# Agent Office B1.0 — 独立首版交付与验收
+# B1.0 Web 验收记录
 
-> Status: ACTIVE · 2026-11-06 · Git 首版拆分记录；主创审美与工程检查分别记录
+> Status: HISTORICAL · 2026-11-06 · 首版 c9ae39d 及资产清理后复验；不代替主创审美验收
 
-## 交付与启动
-
-B1 已从旧多入口工程拆到 `web/`，默认 `/` 打开 Demo。方式见 [README](../../README.md)：`npm ci --prefix web`、`npm run dev --prefix web`，地址 [127.0.0.1:5173](http://127.0.0.1:5173/)。
-
-同一 B00、原六张站姿和新增三坐姿 / 女性接待，共 11 张原字节 PNG。移除 Three.js / R3F、旧评审入口、M1 默认配置与 3D 布局助手；顶部旧链接替换为空间导览，其他视觉与交互保留。
-
-## 原工程与保留范围
-
-已阅读约定、状态、产品方向、M1 / M1.2 的 World、事件、角色、任务和成果逻辑。产品正文实际位于 `docs/product/agent-office-product-direction-v0.1/`。
-
-提取原 `MockScenarioRunner` / reducer 与二维路径计算，不重建第二套状态。三负责人剧情显式传入，保留目标、任务、决定、交接、成果、释放与回放。旧代码、模型与原件保持本机原位置并被 Git 忽略，新克隆不含旧演示入口。此前 3D 目标继续由设计和架构资料维护。
-
-## 实现文件
-
-| 文件 | 责任 |
-| --- | --- |
-| [main.tsx](../../web/src/office/main.tsx) | 同一 runner 订阅、播放控制、坐标缩放、移动端导航与模态入口 |
-| [scene.config.ts](../../web/src/office/scene.config.ts) | 唯一 B00 坐标系、十区 polygon / 标签、七角色、站姿 / 坐姿素材、脚底、职责与对话映射 |
-| [scenario.ts](../../web/src/office/scenario.ts) | 三部门、三负责人、三临时执行角色与连续 B00 路线；不含接待执行实例 |
-| [projection.ts](../../web/src/office/projection.ts) | 原业务状态到角色状态、任务历史、区域状态和 B00 二维路线的投影 |
-| [Scene.tsx](../../web/src/office/Scene.tsx) | 独立 Ambient / Event SVG 层、热点、屏幕文字和人物 DOM |
-| [Dialogs.tsx](../../web/src/office/Dialogs.tsx) | 十区内容、七种 Mock 对话、成果三页、审批、事件记录和草稿下载 |
-| [style.css](../../web/src/office/style.css) / [Icon.tsx](../../web/src/office/Icon.tsx) | 暖白与青绿视觉、环境动画、响应式与 reduced-motion、本地 SVG 图标 |
-| [world.ts](../../web/src/mock/world.ts) | 从原 M1 提取的唯一 Mock 引擎，必须显式指定 B1 场景配置，含退回与重新提交分支 |
-| [vite.config.mjs](../../web/vite.config.mjs) / [package.json](../../web/package.json) | 独立单入口构建和启动 / 验证脚本 |
-| [world.test.mjs](../../web/tests/world.test.mjs) / [browser.mjs](../../web/tests/browser.mjs) | 决定分支与投影回归、真实浏览器操作与截图 |
+本记录保留独立 Web 首版的截图、实际检查和限制。启动命令见 [README](../../README.md)，代码职责见 [架构](ARCHITECTURE.md)，审批和实例生命周期见 [Mock 契约](MOCK_SCENARIO.md)。当前修改不自动继承本记录中的全部通过结论。
 
 ## 素材、坐标与命中规则
 
-原件身份、路径、来源和 SHA-256 维护在 [机器资产登记](ASSET_REGISTRY.json)，阅读视图见 [资产登记](ASSET_REGISTRY.md#b10-原始图片素材)。接收检查快照（本地归档 / 外部参考，未随版：`design/b1-living-office/validation/supplied-assets.json`） 记录八张附件。B00 1672 × 941 RGB；六张 B01 1086 × 1448 RGBA，具有透明通道。新增四张 PNG 共 3,915,480 bytes，运行时十一张图总量 12,172,735 bytes。完整生成提示、参考图、仓库相对路径与哈希见 [生成记录](../design/b1-character-provenance.json)，透明通道及文件检查见 新增素材快照（本地归档 / 外部参考，未随版：`design/b1-living-office/seating-v1/validation/generated-assets.json`）。目标参考图不参与页面加载。
+原件身份、路径、来源和 SHA-256 维护在 [机器资产登记](../assets/registry.json)，阅读视图见 [资产登记](../assets/README.md)。接收时检查了八张附件，原临时检查快照已随 design 清理。B00 1672 × 941 RGB；六张 B01 1086 × 1448 RGBA，具有透明通道。新增四张 PNG 共 3,915,480 bytes，运行时十一张图总量 12,172,735 bytes。完整生成提示、参考图、仓库相对路径与哈希见 [生成记录](../assets/character-provenance.json)；原临时检查快照已清理。目标参考图不参与页面加载。
 
 桌面使用 `min(viewportWidth / 1672, viewportHeight / 941)`，不拉伸、不裁掉空间主体。非 16:9 空白由协调的绿灰渐变填充。移动端提供 65% / 85% / 100% 独立缩放、原生触摸平移、十区导航与独立进入按钮。
 
-### 区域映射（B00 像素）
+### 区域映射快照（B00 像素）
 
 | ID | 区域 | 点击中心 | 标签锚点 |
 | --- | --- | --- | --- |
@@ -50,9 +25,9 @@ B1 已从旧多入口工程拆到 `web/`，默认 `/` 打开 Demo。方式见 [R
 | showcase | 成果展示区 | 1435, 681 | 1431, 582 |
 | mezzanine | 云端休息室 | 1290, 130 | 1193, 119 |
 
-完整 polygon 顶点只在 `scene.config.ts` 维护。根据 B00 的拱顶与地台边界描绘，并使用真实截图和实际鼠标中心点击逐区验证。开发模式右下角「热点开 / 关」或 `?debug=1` 可校准；生产构建没有该控件。目标屏、执行屏和成果屏叠加文字都落在已有物理屏幕内。
+下表和坐标是首版验收快照；后续调整只维护代码配置及对应版本证据，不同步维护第二套可执行配置。完整 polygon 顶点只在 `scene.config.ts` 维护。根据 B00 的拱顶与地台边界描绘，并使用真实截图和实际鼠标中心点击逐区验证。开发模式右下角「热点开 / 关」或 `?debug=1` 可校准；生产构建没有该控件。目标屏、执行屏和成果屏叠加文字都落在已有物理屏幕内。
 
-### 人物映射
+### 人物映射快照
 
 | 场景 ID / World ID | 职责与素材 | 待命坐姿脚底 / 高度 | 站姿脚底 / 高度 |
 | --- | --- | --- | --- |
@@ -64,19 +39,9 @@ B1 已从旧多入口工程拆到 `web/`，默认 `/` 打开 Demo。方式见 [R
 | qa-worker / test | 临时测试 Agent，原 B01-06 | 不显示 | 1538,585 / 126 |
 | receptionist / 无执行实例 | 新增站立女性接待，常驻空间导览 | 常驻站姿 | 402,725 / 151 |
 
-原研究人物提升为第三部门负责人是本轮用户“3 位负责人 + 3 位子 Agent”的实现映射；原 M1.2 仍为两负责人 / 四执行角色。七个角色都可在空间导览中点击查看；首屏实际显示三位坐姿负责人和女性接待，共四人。未调用的子 Agent 不显示在场景中。
+原研究人物提升为第三部门负责人，落实用户“3 位负责人 + 3 位子 Agent”的要求。七个角色都可在空间导览中点击查看；首屏实际显示三位坐姿负责人和女性接待，共四人。未调用的子 Agent 不显示在场景中。
 
-| 节点（模拟秒） | 人物与实例 |
-| --- | --- |
-| ready / reset | 三负责人在沙发入座，设计与研发对话、研究阅读；女性接待站立；无子 Agent |
-| start / 0 | 三负责人切为原站立图，随后按事件去对应部门；暂停保留当前姿态 |
-| 7 / 8 | visual 创建 / task.started 后显示 |
-| 10 / 11 | frontend 创建 / task.started 后显示 |
-| 40 | 审批阻断，保留尚未结束的 visual / frontend；退回保持阻断 |
-| 批准后 41 | visual 完成并立即释放、隐藏 |
-| 50 / 51 | test 创建 / task.started 后显示 |
-| 55 / 60 | frontend / test 分别完成、释放、隐藏；历史仍可阅读 |
-| 71 / 75 / 84–88 | 交付三成果 / 负责人返回 / 到达后入座；接待保持常驻 |
+事件时点、实例显隐、暂停与回座规则统一见 [Mock 契约](MOCK_SCENARIO.md)。
 
 图片脚底原点为横向 50%、纵向 98%，人物透明留白不参与大面积命中；有效命中区略宽于身体可见轮廓，角色标签也可点击；坐姿标签仅在悬停 / 键盘聚焦时显示，避免遮住聊天与阅读姿态。人物位于热点层之上，点击不冒泡到区域。脚底阴影为轻微 DOM 叠加，不把人物改成半透明。
 
@@ -86,13 +51,13 @@ B1 已从旧多入口工程拆到 `web/`，默认 `/` 打开 Demo。方式见 [R
 
 以下为独立首版生产构建的截图：
 
-- [完整首屏](../design/b1/production-first-screen.png)
-- [人物对话](../design/b1/agent-dialog.png)
-- [成果报告](../design/b1/artifact-report.png)
+- [完整首屏](evidence/production-first-screen.png)
+- [人物对话](evidence/agent-dialog.png)
+- [成果报告](evidence/artifact-report.png)
 
 完整截图与 JSON 由 `web/tests/browser.mjs`、`web/tests/production.mjs` 生成到忽略的 `web/test-results/`，不提交批量输出。
 
-## 本次验证记录
+## 首版验证记录（c9ae39d）
 
 2026-11-06，本机 Headless Chromium。通过实际按钮播放与审批，不注入快进或强改 World。开发读取接口仅返回复制快照；生产不暴露诊断对象。
 
@@ -119,4 +84,8 @@ B1 已从旧多入口工程拆到 `web/`，默认 `/` 打开 Demo。方式见 [R
 4. **二维图像没有真实深度缓冲。** 通过位置、比例、脚底和层级避免主要家具冲突；截图覆盖待命、工作、交接、审批与交付节点，未提供每一帧的真实几何遮挡或物理碰撞保证。原 PNG 与生成 PNG 的局部边缘杂色没有额外像素修图；未用半透明处理遮挡。
 5. **手机采用区域视口。** 不将整个 16:9 办公室压缩成不可点击的缩略图；用户可拖动、缩放或直接导航，桌面始终完整展示主体。
 6. **业务、问答、研究与成果完全 Mock。** 网站是内置页面示意，无外部链接或已部署站点；报告中的“模拟通过”不代表真实测试。退回后不自动修订方案，需重新提交预设方向或重置。
-7. **Practice 仅本地未验证草稿。** 没有真实 Agent SDK、M2 编排、后端持久化或已验证方法复用；本次仅按授权建立 Git 首版，不启动付费建模、PR 或部署。
+7. **Practice 仅本地未验证草稿。** 没有真实 Agent SDK、M2 编排、后端持久化或已验证方法复用；首版没有真实 Agent 集成或线上部署。
+
+## 资产清理后复验（2026-11-06）
+
+五个旧目录已删除，Web 源码、剧情和 11 张 PNG 的 SHA-256 与清理前相同。重新执行 `check`、`test`、`build`、`test:production` 均通过，生产首页、导览、角色对话、批准、交付、回座与实例释放正常；无资源加载失败。此次没有改动 UI，也没有重新宣称实体设备或跨浏览器验收。文档与当前资产路径见 [项目状态](../STATUS.md)。

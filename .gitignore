@@ -11,29 +11,25 @@
 # Keep local historical documents/experiments out; admit the curated documentation below.
 /docs/**
 !/docs/**/
-!/docs/DECISIONS_AND_OPEN_QUESTIONS.md
-!/docs/IMPLEMENTATION_ROADMAP.md
 !/docs/README.md
-!/docs/TECHNICAL_ARCHITECTURE.md
-!/docs/architecture/AGENT_EVENT_CONTRACT.md
-!/docs/architecture/M1_MOCK_SCENARIO.md
-!/docs/design/A1.2_VISUAL_LOCK.md
-!/docs/design/b1-character-provenance.json
-!/docs/design/b1/agent-dialog.png
-!/docs/design/b1/artifact-report.png
-!/docs/design/b1/production-first-screen.png
-!/docs/design/references/agent-office-target.png
-!/docs/design/references/b20-proposal-v02.txt
-!/docs/product/agent-office-product-direction-v0.1/AGENT_OFFICE_PRODUCT_DIRECTION_V0.1.md
-!/docs/product/agent-office-product-direction-v0.1/NEW_CHAT_HANDOFF.md
-!/docs/product/agent-office-product-direction-v0.1/README.md
-!/docs/production/AI_3D_PIPELINE.md
-!/docs/production/ASSET_REGISTRY.json
-!/docs/production/ASSET_REGISTRY.md
-!/docs/production/B10_LIVING_OFFICE_REPORT.md
-!/docs/production/B20_S1_SPATIAL_BLUEPRINT.md
-!/docs/production/CURRENT_PROJECT_STATE.md
-!/docs/production/QUALITY_GATES.md
+!/docs/STATUS.md
+!/docs/product/DIRECTION.md
+!/docs/product/ROADMAP.md
+!/docs/web/ARCHITECTURE.md
+!/docs/web/MOCK_SCENARIO.md
+!/docs/web/ACCEPTANCE.md
+!/docs/web/evidence/agent-dialog.png
+!/docs/web/evidence/artifact-report.png
+!/docs/web/evidence/production-first-screen.png
+!/docs/assets/README.md
+!/docs/assets/registry.json
+!/docs/assets/character-provenance.json
+!/docs/assets/references/agent-office-target.png
+!/docs/reference/VISUAL_DIRECTION.md
+!/docs/reference/3D_WORKFLOW.md
+!/docs/reference/AGENT_EVENT_CONTRACT.md
+!/docs/history/M11_ASSET_REVIEW.md
+!/docs/history/DOCUMENTATION_AUDIT.md
 
 # Reproducible outputs and local tooling state are never source.
 **/node_modules/

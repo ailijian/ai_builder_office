@@ -46,21 +46,44 @@ for(const file of files.filter(f=>/\.(?:ts|tsx|mjs)$/.test(f)&&f.startsWith('web
   }
 }
 // Validate actual Markdown destinations against the release, not excluded files on this machine.
+function markdownAnchors(body){
+  const counts=new Map(), ids=new Set();
+  for(const match of body.replace(/```[\s\S]*?```/g,'').matchAll(/^#{1,6}\s+(.+)$/gm)){
+    const base=match[1].trim().toLowerCase().replace(/<[^>]*>/g,'').replace(/[^\p{L}\p{N}_\-\s]/gu,'').replace(/\s/g,'-');
+    const count=counts.get(base)??0; counts.set(base,count+1);
+    ids.add(base+(count?'-'+count:''));
+  }
+  return ids;
+}
 for(const file of files.filter(f=>f.endsWith('.md'))){
   const body=read(file).replace(/```[\s\S]*?```/g,'');
   for(const match of body.matchAll(/!?\[[^\]\n]+\]\(([^)\n]+)\)/g)){
     let target=match[1].replace(/^<|>$/g,'');
-    if(/^(?:https?:|mailto:|#)/.test(target))continue;
-    target=decodeURIComponent(target.split('#')[0]);
-    const resolved=path.posix.normalize(path.posix.join(path.posix.dirname(file),target));
+    if(/^(?:https?:|mailto:)/.test(target))continue;
+    const [destination,fragment]=target.split('#');
+    target=decodeURIComponent(destination);
+    const resolved=target?path.posix.normalize(path.posix.join(path.posix.dirname(file),target)):file;
     check(included.has(resolved),`Unpublished Markdown destination in ${file}: ${target}`);
+    if(fragment&&included.has(resolved)&&resolved.endsWith('.md')){
+      check(markdownAnchors(read(resolved)).has(decodeURIComponent(fragment)),'Missing Markdown anchor in '+file+': '+match[1]);
+    }
   }
 }
-const registry=JSON.parse(read('docs/production/ASSET_REGISTRY.json'));
+const registry=JSON.parse(read('docs/assets/registry.json'));
+const registeredByPath=new Map(registry.assets.map(asset=>[asset.path,asset]));
+check(registeredByPath.size===registry.assets.length,'Duplicate current asset paths');
+check(new Set(registry.assets.map(asset=>asset.id)).size===registry.assets.length,'Duplicate current asset IDs');
 let runtimeBytes=0,runtimeCount=0;
 for(const asset of registry.assets){
   check(typeof asset.bundled==='boolean',`Missing distribution boundary: ${asset.id}`);
   check(!('absolute_path' in asset),`Machine-local path: ${asset.id}`);
+  for(const field of ['review','archived_review']){
+    if(asset[field])check(included.has(asset[field]),'Unpublished asset review: '+asset.id+'/'+field);
+  }
+  for(const support of asset.supporting_files??[]){
+    const registered=registeredByPath.get(support.path);
+    check(registered?.sha256===support.sha256&&registered?.bytes===support.bytes,'Stale supporting asset reference: '+asset.id+'/'+support.path);
+  }
   if(!asset.bundled)continue;
   check(included.has(asset.path),`Bundled asset missing from release: ${asset.id}`);
   const bytes=fs.readFileSync(path.join(root,asset.path));
@@ -69,7 +92,7 @@ for(const asset of registry.assets){
   if(asset.path.startsWith('web/assets/')){runtimeBytes+=bytes.length;runtimeCount++;}
 }
 check(runtimeCount===11&&runtimeBytes===12172735,'Runtime PNG set differs from reviewed 11 original assets');
-const provenance=JSON.parse(read('docs/design/b1-character-provenance.json'));
+const provenance=JSON.parse(read('docs/assets/character-provenance.json'));
 for(const asset of provenance.assets){
   for(const key of ['output','context_image','reference_image'])check(included.has(asset[key]),`Unpublished provenance reference: ${asset.id}/${key}`);
   check(!('generated_original' in asset),`Machine-local generation path: ${asset.id}`);

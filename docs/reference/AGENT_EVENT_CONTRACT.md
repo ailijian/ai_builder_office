@@ -1,8 +1,8 @@
 # AgentEvent v1 数据契约
 
-> **B1 首版范围（2026-11-06）：** 当前代码仅为 `web/` 的 React / DOM / SVG 图片式 Demo。本文 3D、生产和后端内容保留为目标及历史设计依据；旧工具、模型与评审证据未随版，不可据此认定可运行或已获下一阶段授权。最新事实见 [当前状态](../production/CURRENT_PROJECT_STATE.md)。文中“本轮 / 当前”的旧阶段记录按原记录日期理解。
+> Status: REFERENCE · 2026-11-07 · 以当前项目状态为准
 
-> Status: ACTIVE · 2026-11-05 · 当前维护；范围以项目状态和唯一流水线为准。 [当前入口](../production/CURRENT_PROJECT_STATE.md)
+> 未来真实业务事件草案，尚未接入。当前 B1 仅使用 m1-mock/1；本文件不触发 Provider、后端或真实 Agent 工作。
 
 ## 格式与定义
 
@@ -26,7 +26,7 @@ type AgentEvent = {
 };
 ```
 
-## 首版事件类型
+## 拟议事件类型
 
 | type | 语义 | 典型业务影响 |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ type AgentEvent = {
 | `task.failed` | 后端确认失败 | failed |
 | `task.cancelled` | 后端确认取消 | cancelled |
 
-本样板 deliberately 不含百分比进度。以后只有真实可靠的工具/阶段信息能解释进度时才考虑添加。
+本草案不包含百分比进度。以后只有真实可靠的工具/阶段信息能解释进度时才考虑添加。
 
 ## 状态投影算法的要求
 
@@ -58,6 +58,8 @@ type AgentEvent = {
 - 服务端核验用户身份、Agent/任务权限和请求有效期 → 更新审批记录 → 恢复或取消运行 → 写入 `approval.resolved` 事件。
 - 前端在真正收到成功确认之前显示“正在处理”，不能直接播放“已批准”的确定性动画。
 
-## 数据样板
+## 与当前实现的关系
 
-请见项目 `fixtures/sample-agent-events.json`；有配套 `validate_events.py` 用于快速检查。真实开发应使用 Zod 等 schema 在 API 入口再校验，而不是把此 Python 脚本当作生产后端。
+当前 [Mock 契约](../web/MOCK_SCENARIO.md) 使用另一命名空间和本地时钟，不能将本草案类型直接接到 Mock reducer。当前发布包没有真实事件服务、schema 校验器或 Provider Adapter。
+
+后续获授权实现时，应根据实际 Provider 的可观察能力形成正式 schema、配套 fixture 与验证测试，验证乱序、重复、缺口、断线恢复和审批权限；本文件不代表这些能力已实现。项目本地旧 sample / 检查工具未随版发布，不能作为生产后端。

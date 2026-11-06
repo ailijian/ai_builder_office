@@ -2,7 +2,7 @@
 
 > Status: ACTIVE · 2026-11-06 · 当前 B1 Demo，沿用 M1 模拟契约
 
-产品方向由 [产品正文](../product/agent-office-product-direction-v0.1/AGENT_OFFICE_PRODUCT_DIRECTION_V0.1.md) 维护。本文不替代未来真实业务 [AgentEvent v1](AGENT_EVENT_CONTRACT.md)。
+产品方向由 [产品正文](../product/DIRECTION.md) 维护。本文不替代未来真实业务 [AgentEvent v1](../reference/AGENT_EVENT_CONTRACT.md)。
 
 ## 执行与表现分离
 
@@ -59,4 +59,4 @@ B1 路线持续时间与 B00 像素点一并声明，仍经共享起点连续性
 
 命令见 [README](../../README.md)。状态测试覆盖精确时点、审批与重播；浏览器通过真实 UI 完成退回 / 重新提交 / 批准和两次回放，将完整 World 与拆分前验证快照逐字段比较。基线是已有实现证据，不是未来产品要求。
 
-旧 M1 / M1.2 两负责人、四类终端与 3D 视图保存在本机历史工程，未随版发布。本版没有 R3F、旧布局或第二套业务引擎。结果见 [B1 交付报告](../production/B10_LIVING_OFFICE_REPORT.md)。
+旧 M1 / M1.2 的 design 工程已清理，其模拟引擎和完整 B1 基线保存在当前 `web/` 中；旧入口不可再启动。本版没有 R3F、旧布局或第二套业务引擎。结果见 [B1 交付报告](ACCEPTANCE.md)。

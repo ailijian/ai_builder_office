@@ -1,16 +1,16 @@
 # Agent Office — 项目约定
 
-> Status: ACTIVE · 2026-11-06
+> Status: ACTIVE · 2026-11-07
 
-首版代码入口为 `web/` 的 B1.0 图片式 Living Office Demo。原 3D 产品目标和设计文档保留；旧实现、资产生产工具和模型仅在本地归档，不属于本版代码。
+本文件维护仓库级约束和入口。阶段、资产版本与验收结果分别由下列文档维护。
 
 ## 当前入口
 
-- 开始任务先读 [当前状态](docs/production/CURRENT_PROJECT_STATE.md)，再按 [知识索引](docs/README.md) 定位资料。
+- 开始任务先读 [当前状态](docs/STATUS.md)，再按 [知识索引](docs/README.md) 定位资料。
 - 启动和验证取 [README](README.md)。默认在 `web/` 迭代，不重新引入旧多入口工程。
-- 资产身份、来源、哈希取 [机器登记](docs/production/ASSET_REGISTRY.json)；`bundled: false` 是本地历史记录，不是仓库现有文件。
-- 未来 3D 制作遵循 [AI 3D 流水线](docs/production/AI_3D_PIPELINE.md)、[质量关卡](docs/production/QUALITY_GATES.md) 与 [视觉锁定](docs/design/A1.2_VISUAL_LOCK.md)。文档存在不等于实施授权。
-- 系统与事件边界取 [技术架构](docs/TECHNICAL_ARCHITECTURE.md) 及 [Mock 状态约定](docs/architecture/M1_MOCK_SCENARIO.md)。
+- 资产身份、来源、哈希取 [机器登记](docs/assets/registry.json)。`bundled: false` 表示不随 Git 发布，`storage: local-retained` 表示本机保留；`retired_assets` 不能当作可用输入。
+- 只有新的明确 3D 任务才使用 [流程与质量关卡](docs/reference/3D_WORKFLOW.md) 与 [视觉规范](docs/reference/VISUAL_DIRECTION.md)。普通 Web 任务不需要启动资产 Skill 或重建已清理模型。
+- 系统与事件边界取 [技术架构](docs/web/ARCHITECTURE.md) 及 [Mock 状态约定](docs/web/MOCK_SCENARIO.md)。
 
 ## 永久约束
 
@@ -26,5 +26,5 @@
 - `.gitignore` 限制为根治理文件、`web/` 和选定文档。必要 PNG 与三张验收截图随版；依赖、构建、日志、密钥、本机状态、模型和旧实现不提交。新文档加入索引及白名单，不用强制添加绕过范围。
 - 变更请求允许必要局部修改与验证；只有明确授权才提交、推送、发布或部署。不得顺带删除本地历史资料。
 - 按风险运行类型检查、状态测试、构建及浏览器测试。提交前运行 `test:repository`、审阅暂存清单和 diff。构建成功不等于美术验收或真实 Agent 执行成功。
-- 同一事实更新现有来源；索引只导航，摘要从属正文。ACTIVE 不表示已实现；HISTORICAL / SUPERSEDED 不构成当前执行授权。
+- 同一事实更新职责所属来源，索引只导航；分类及维护规则取知识索引，不建立平行续聊摘要或“最新版”。ACTIVE 不表示已实现；HISTORICAL / SUPERSEDED 不构成当前执行授权。
 - 仅在明确授权治理调整时修改本文件。未来需要资产 Skill 时先确认本机可用版本；本版不发布这些工具代码。

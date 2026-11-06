@@ -3,5 +3,3 @@
 *.jpg binary
 *.jpeg binary
 *.webp binary
-# Keep the supplied design proposal byte-identical, including its CRLF endings.
-/docs/design/references/b20-proposal-v02.txt -text whitespace=cr-at-eol

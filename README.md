@@ -1,10 +1,10 @@
 # Agent Office · B1.0 Living Office
 
-> Status: ACTIVE · 2026-11-06
+> Status: ACTIVE · 2026-11-07
 
 可以探索、回放和作出决定的 AI 办公空间 Demo。以完整场景图和透明人物 PNG 为基础，用 React / TypeScript、DOM 和 SVG 呈现温暖的 2.5D 工作群岛。
 
-![Agent Office 首屏](docs/design/b1/production-first-screen.png)
+![Agent Office 首屏](docs/web/evidence/production-first-screen.png)
 
 ## 本地启动
 
@@ -50,14 +50,14 @@ npm run test:browser --prefix web
 npm run test:production --prefix web
 ```
 
-测试自行启动和关闭本地服务；生产测试需要先构建。截图与原始结果写入忽略的 `web/test-results/`。实际记录见 [B1 交付报告](docs/production/B10_LIVING_OFFICE_REPORT.md)。手机使用 Chromium 仿真，未宣称实体手机或跨浏览器验收。
+测试自行启动和关闭本地服务；生产测试需要先构建。截图与原始结果写入忽略的 `web/test-results/`。实际记录见 [B1 交付报告](docs/web/ACCEPTANCE.md)。手机使用 Chromium 仿真，未宣称实体手机或跨浏览器验收。
 
 ## 代码与版本边界
 
 `web/src/office/` 维护场景、坐标、交互和事件投影；`web/src/mock/` 是从 M1 提取的同一事件引擎与二维路径计算；`web/fixtures/` 是剧情；`web/assets/` 保存 11 张必要运行图片。没有 Three.js、R3F 或模型依赖。
 
-Git 保留 Demo 源码、锁文件、必要 PNG、测试及选定产品 / 设计文档。旧评审代码、模型、生成目录、缓存、构建、测试输出和本机配置由白名单与通用忽略规则过滤。本机原文件仍保留；新克隆仅包含本版内容。新增文档须登记于 `.gitignore` 文档白名单，不用强制添加绕过范围。
+Git 保留 Demo 源码、锁文件、必要 PNG、测试及选定产品 / 设计文档；缓存、构建、测试输出和本机资料继续过滤。旧 `design/` 工程、试验模型和重复导出已按用户要求删除；当前 Web 的源码与 11 张运行 PNG 未改变。新增文档须登记于 `.gitignore` 文档白名单，不用强制添加绕过范围。
 
-**此前确定的 3D 目标继续保留。** 未来采用 React / R3F / Three.js 正交相机、可编辑 Blender 源文件、GLB 与独立 HTML 业务 UI，以已批准视觉和资产身份为依据。本次建立图片式 Demo 迭代基线，不启动 M2、真实 SDK、付费建模或下一资产阶段。登记中 `bundled: false` 的模型仅保留元数据。
+**接下来以当前 Web 为主迭代，保留后续 3D 目标。** 本机模型不随 Git 发布；范围与身份见 [资产说明](docs/assets/README.md)，路线见 [产品路线](docs/product/ROADMAP.md)。
 
-后续任务先读 [当前状态](docs/production/CURRENT_PROJECT_STATE.md) 和 [知识索引](docs/README.md)。
+后续任务先读 [当前状态](docs/STATUS.md) 和 [文档索引](docs/README.md)。资料已分为产品、Web、资产、未来参考和必要历史；不要从已删除的旧路径启动工程。
