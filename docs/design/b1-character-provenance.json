@@ -1,0 +1,51 @@
+{
+  "tool": "built-in image_gen",
+  "requestDate": "2026-11-06",
+  "assets": [
+    {
+      "id": "design-lead-seated-v001",
+      "ref": "ChatGPT 图像 2026年11月6日 14_39_39-1.png",
+      "prompt": "Use case: identity-preserve. Asset: one separate transparent PNG sprite for an existing 2.5D office. Image 1 is the exact character identity and clothing reference. Image 2 is only camera/lighting/sofa context, do not reproduce any scene or furniture. Transform ONLY the pose of Image 1 into a natural relaxed seated conversation pose. Keep the same face, brown swept hair, pale blue-gray overshirt, cream shirt and trousers, white sneakers, teal wrist device, appealing premium miniature 3D render style. Seated on an invisible sofa seat, torso gently turned toward screen RIGHT and head looking toward a conversation partner to screen RIGHT, small relaxed open-hand gesture; no partner in image. Thighs horizontal, knees naturally bent, both feet comfortably grounded below the knees. Remove the handheld tablet so hands can gesture naturally. Slightly elevated three-quarter office camera consistent with Image 2. Entire person including both shoes visible with small clear margin. Only ONE complete character; NO sofa, chair, stool, environment, ground plane, text, frame, decorative objects or contact shadow. True transparent alpha background. Warm soft light from upper left. Preserve recognizable identity and clothing.",
+      "output": "web/assets/design-lead-seated-v001.png",
+      "sha256": "fa1a6eebc0fe6e1457b88d4835fefd3fa9d155a47f0935613a188018f364820f",
+      "bytes": 996428,
+      "transparent_background": true,
+      "context_image": "web/assets/未来生态科技中庭.png",
+      "reference_image": "web/assets/ChatGPT 图像 2026年11月6日 14_39_39-1.png"
+    },
+    {
+      "id": "development-lead-seated-v001",
+      "ref": "ChatGPT 图像 2026年11月6日 14_39_40-2.png",
+      "prompt": "Use case: identity-preserve. Asset: one separate transparent PNG sprite for an existing 2.5D office. Image 1 is exact character identity and outfit. Image 2 is only camera/lighting/sofa context; do not reproduce environment or furniture. Transform ONLY pose into relaxed seated listening/conversation. Keep original face, swept brown hair, dark petrol teal jacket, ivory shirt, cream cargo trousers, white sneakers, teal watch, premium miniature 3D style. Character sits on an invisible horizontal sofa seat, torso turned toward screen LEFT, head looking warmly at conversation partner to screen LEFT, one hand resting on thigh and the other very gently gesturing. No laptop needed; remove it. No other character. Knees bent naturally, thighs horizontal, feet relaxed on invisible floor. View from a slightly elevated three-quarter office camera to match Image 2. Full body and both shoes visible with modest margin. Only ONE character on actual transparent alpha; NO sofa, chair, stool, table, floor, shadow, environment, text, frame or extra props. Soft warm upper-left lighting. Preserve identity and outfit.",
+      "output": "web/assets/development-lead-seated-v001.png",
+      "sha256": "c2f4d03a1a3a6d29ed28a47ee4cb5f726ae5f1d3ada54ee311e2e5cdc62f85c8",
+      "bytes": 1037993,
+      "transparent_background": true,
+      "context_image": "web/assets/未来生态科技中庭.png",
+      "reference_image": "web/assets/ChatGPT 图像 2026年11月6日 14_39_40-2.png"
+    },
+    {
+      "id": "research-lead-seated-v001",
+      "ref": "ChatGPT 图像 2026年11月6日 14_39_41-3.png",
+      "prompt": "Use case: identity-preserve. Asset: one separate transparent PNG sprite of the research department lead sitting and reading, for existing 2.5D office. Image 1 fixes exact character identity and clothing. Image 2 is camera/lighting context only, never reproduce furniture or scene. Keep the same brown swept hair and friendly face, sage gray-green overshirt, ivory shirt, cream trousers, white sneakers, teal watch and original premium stylized miniature 3D material quality. Change pose to seated naturally on an invisible sofa seat, shoulders relaxed, head tilted slightly downward while reading a small OPEN BOOK held naturally over the lap with both hands. Torso mostly toward viewer with gentle screen-left angle, knees comfortably bent, thighs horizontal, both shoes visible resting below knees. Slightly elevated three-quarter camera matching Image 2, soft warm light from upper left. Full body from head to both shoes, modest transparent margin. Only ONE person and the open book, no readable text. No sofa, stool, chair, table, ground, environment, shadow or border. True transparent alpha background.",
+      "output": "web/assets/research-lead-seated-v001.png",
+      "sha256": "f4b8c5c40d7eed06e7bf9eba493892de87e36c63539850cee24db18eaa4e4bbc",
+      "bytes": 1028660,
+      "transparent_background": true,
+      "context_image": "web/assets/未来生态科技中庭.png",
+      "reference_image": "web/assets/ChatGPT 图像 2026年11月6日 14_39_41-3.png"
+    },
+    {
+      "id": "receptionist-standing-v001",
+      "ref": "ChatGPT 图像 2026年11月6日 14_39_39-1.png",
+      "prompt": "Use case: stylized-concept. Asset: a NEW standing female receptionist transparent PNG sprite for the same existing Agent Office miniature world. Image 1 is STYLE/PROPORTION reference only, NOT the target person's identity; create a distinct female professional. Image 2 is environment camera and lighting reference only, do not recreate the room. Single friendly young adult woman, chestnut shoulder-length softly waved hair tucked behind one ear, warm expressive brown eyes, pleasant natural welcoming smile. Premium soft stylized 3D miniature, gently oversized head and compact proportions matching Image 1, warm ivory skin lighting, clean detailed cloth. Outfit: muted sage-teal short jacket over cream top, light beige straight-leg trousers, cream clean sneakers, small discreet teal wrist accessory. Standing upright in relaxed contrapposto, full body and both feet visible, slight three-quarter turn toward screen RIGHT, small welcoming open-palm gesture, other hand holding a small slim reception tablet naturally at waist. Soft warm upper-left lighting, slightly elevated office camera compatible with Image 2. Only one character, true transparent alpha. No reception desk, furniture, architecture, ground, cast shadow, background, text, logos or frame. Do not reuse the male face; a clearly distinct female receptionist in the matching visual family.",
+      "output": "web/assets/receptionist-standing-v001.png",
+      "sha256": "3e0f284a78751ea9b0b993193e939a0203f8ca323625f8f8147431b8911fb0ce",
+      "bytes": 852399,
+      "transparent_background": true,
+      "context_image": "web/assets/未来生态科技中庭.png",
+      "reference_image": "web/assets/ChatGPT 图像 2026年11月6日 14_39_39-1.png"
+    }
+  ],
+  "distribution_note": "Original generated bytes preserved in web/assets. Machine-specific temporary paths omitted."
+}

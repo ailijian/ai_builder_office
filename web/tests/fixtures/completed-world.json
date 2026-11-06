@@ -1,0 +1,863 @@
+{
+  "time": 88,
+  "status": "finished",
+  "goal": "帮我制作一个品牌网站。",
+  "recommended": true,
+  "departments": {
+    "design": true,
+    "dev": true,
+    "research": true
+  },
+  "agents": {
+    "design-lead": {
+      "id": "design-lead",
+      "name": "Design Lead",
+      "role": "品牌设计负责人",
+      "department": "design",
+      "kind": "lead",
+      "home": [
+        298,
+        617
+      ],
+      "behavior": "Standby",
+      "task": "本次目标已交付，等待新目标",
+      "motion": {
+        "route": "design-standby",
+        "start": 75
+      },
+      "taskId": "brand-brief"
+    },
+    "dev-lead": {
+      "id": "dev-lead",
+      "name": "Dev Lead",
+      "role": "研发负责人",
+      "department": "dev",
+      "kind": "lead",
+      "home": [
+        541,
+        625
+      ],
+      "behavior": "Standby",
+      "task": "本次目标已交付，等待新目标",
+      "motion": {
+        "route": "dev-standby",
+        "start": 75
+      },
+      "taskId": "brand-brief"
+    },
+    "research-lead": {
+      "id": "research-lead",
+      "name": "Research Lead",
+      "role": "研究策划负责人",
+      "department": "research",
+      "kind": "lead",
+      "home": [
+        380,
+        620
+      ],
+      "behavior": "Standby",
+      "task": "本次目标已交付，等待新目标",
+      "motion": {
+        "route": "research-standby",
+        "start": 75
+      },
+      "taskId": "research"
+    }
+  },
+  "events": [
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:1",
+      "sequence": 1,
+      "occurredAt": "2026-11-06T00:00:00.000Z",
+      "at": 0,
+      "type": "goal.created",
+      "payload": {
+        "title": "帮我制作一个品牌网站。"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:2",
+      "sequence": 2,
+      "occurredAt": "2026-11-06T00:00:01.500Z",
+      "at": 1.5,
+      "type": "organization.recommended",
+      "payload": {
+        "summary": "推荐研究策划、品牌设计与网站研发三部门：研究负责人整理定位，设计负责人组织视觉工作，研发负责人组织前端和测试。"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:3",
+      "sequence": 3,
+      "occurredAt": "2026-11-06T00:00:03.000Z",
+      "at": 3,
+      "type": "department.activated",
+      "payload": {
+        "departmentId": "design"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:4",
+      "sequence": 4,
+      "occurredAt": "2026-11-06T00:00:03.000Z",
+      "at": 3,
+      "type": "department.activated",
+      "payload": {
+        "departmentId": "dev"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:5",
+      "sequence": 5,
+      "occurredAt": "2026-11-06T00:00:03.000Z",
+      "at": 3,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-office",
+        "title": "回到设计办公位统筹品牌方向与研究任务"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:6",
+      "sequence": 6,
+      "occurredAt": "2026-11-06T00:00:03.000Z",
+      "at": 3,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-office",
+        "title": "回到研发办公位规划网站结构与执行任务"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:7",
+      "sequence": 7,
+      "occurredAt": "2026-11-06T00:00:03.000Z",
+      "at": 3,
+      "type": "department.activated",
+      "payload": {
+        "departmentId": "research"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:8",
+      "sequence": 8,
+      "occurredAt": "2026-11-06T00:00:03.000Z",
+      "at": 3,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-office",
+        "title": "前往研究策划区整理目标用户与品牌定位"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:9",
+      "sequence": 9,
+      "occurredAt": "2026-11-06T00:00:04.000Z",
+      "at": 4,
+      "type": "task.assigned",
+      "payload": {
+        "agentId": "research-lead",
+        "taskId": "research",
+        "title": "整理目标用户、品牌定位与参考方向"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:10",
+      "sequence": 10,
+      "occurredAt": "2026-11-06T00:00:05.000Z",
+      "at": 5,
+      "type": "task.started",
+      "payload": {
+        "agentId": "research-lead"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:11",
+      "sequence": 11,
+      "occurredAt": "2026-11-06T00:00:07.000Z",
+      "at": 7,
+      "type": "worker.spawned",
+      "payload": {
+        "agentId": "visual",
+        "parentAgentId": "design-lead"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:12",
+      "sequence": 12,
+      "occurredAt": "2026-11-06T00:00:07.000Z",
+      "at": 7,
+      "type": "task.assigned",
+      "payload": {
+        "agentId": "visual",
+        "taskId": "visual",
+        "title": "制作暖白与青绿的品牌视觉方向"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:13",
+      "sequence": 13,
+      "occurredAt": "2026-11-06T00:00:08.000Z",
+      "at": 8,
+      "type": "task.started",
+      "payload": {
+        "agentId": "visual"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:14",
+      "sequence": 14,
+      "occurredAt": "2026-11-06T00:00:10.000Z",
+      "at": 10,
+      "type": "worker.spawned",
+      "payload": {
+        "agentId": "frontend",
+        "parentAgentId": "dev-lead"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:15",
+      "sequence": 15,
+      "occurredAt": "2026-11-06T00:00:10.000Z",
+      "at": 10,
+      "type": "task.assigned",
+      "payload": {
+        "agentId": "frontend",
+        "taskId": "frontend",
+        "title": "规划首页结构，等待品牌方向确认"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:16",
+      "sequence": 16,
+      "occurredAt": "2026-11-06T00:00:11.000Z",
+      "at": 11,
+      "type": "task.started",
+      "payload": {
+        "agentId": "frontend"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:17",
+      "sequence": 17,
+      "occurredAt": "2026-11-06T00:00:12.000Z",
+      "at": 12,
+      "type": "task.finished",
+      "payload": {
+        "agentId": "research-lead"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:18",
+      "sequence": 18,
+      "occurredAt": "2026-11-06T00:00:13.000Z",
+      "at": 13,
+      "type": "task.handoff",
+      "payload": {
+        "from": "research-lead",
+        "to": "design-lead",
+        "taskId": "research",
+        "artifactId": "research-brief",
+        "summary": "研究负责人向设计负责人交接定位摘要：面向独立创作者，以温暖、清晰、可信赖为方向。"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:19",
+      "sequence": 19,
+      "occurredAt": "2026-11-06T00:00:15.000Z",
+      "at": 15,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "handoff",
+        "title": "在讨论区交接品牌研究摘要"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:20",
+      "sequence": 20,
+      "occurredAt": "2026-11-06T00:00:15.000Z",
+      "at": 15,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-handoff",
+        "title": "在讨论区接收品牌研究摘要"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:21",
+      "sequence": 21,
+      "occurredAt": "2026-11-06T00:00:23.000Z",
+      "at": 23,
+      "type": "task.handoff",
+      "payload": {
+        "from": "design-lead",
+        "to": "dev-lead",
+        "taskId": "brand-brief",
+        "artifactId": "brief-draft",
+        "summary": "交接品牌研究摘要：面向独立创作者，以温暖、清晰、可信赖为方向。"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:22",
+      "sequence": 22,
+      "occurredAt": "2026-11-06T00:00:25.000Z",
+      "at": 25,
+      "type": "collaboration.started",
+      "payload": {
+        "topic": "品牌方向与首页首屏如何保持一致？"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:23",
+      "sequence": 23,
+      "occurredAt": "2026-11-06T00:00:25.000Z",
+      "at": 25,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-meeting",
+        "title": "携带品牌提案前往共享讨论区"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:24",
+      "sequence": 24,
+      "occurredAt": "2026-11-06T00:00:25.000Z",
+      "at": 25,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-meeting",
+        "title": "携带首页结构前往共享讨论区"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:25",
+      "sequence": 25,
+      "occurredAt": "2026-11-06T00:00:25.000Z",
+      "at": 25,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-meeting",
+        "title": "携带研究摘要加入品牌方向讨论"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:26",
+      "sequence": 26,
+      "occurredAt": "2026-11-06T00:00:36.000Z",
+      "at": 36,
+      "type": "meeting.started",
+      "payload": {
+        "topic": "确认品牌方向与首页信息层级",
+        "summary": "设计：暖白 / 青绿，主张「让好想法开始生长」。研发：首屏主张 → 核心价值 → 联系入口。共同建议先完成单页展示站。"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:27",
+      "sequence": 27,
+      "occurredAt": "2026-11-06T00:00:40.000Z",
+      "at": 40,
+      "type": "decision.requested",
+      "payload": {
+        "decisionId": "brand-direction",
+        "title": "采用「温暖、清晰、可信赖」的品牌方向？",
+        "summary": "批准后，研发将按暖白与青绿的视觉方案完成单页网站，测试 Agent 再做模拟检查。此决定仅作用于当前 Mock 演示。"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:28",
+      "sequence": 28,
+      "occurredAt": "2026-11-06T00:00:40.000Z",
+      "at": 40,
+      "type": "decision.resolved",
+      "payload": {
+        "decisionId": "brand-direction",
+        "resolution": "approved"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:29",
+      "sequence": 29,
+      "occurredAt": "2026-11-06T00:00:41.000Z",
+      "at": 41,
+      "type": "task.finished",
+      "payload": {
+        "agentId": "visual"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:30",
+      "sequence": 30,
+      "occurredAt": "2026-11-06T00:00:41.000Z",
+      "at": 41,
+      "type": "worker.removed",
+      "payload": {
+        "agentId": "visual"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:31",
+      "sequence": 31,
+      "occurredAt": "2026-11-06T00:00:41.000Z",
+      "at": 41,
+      "type": "task.started",
+      "payload": {
+        "agentId": "frontend"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:32",
+      "sequence": 32,
+      "occurredAt": "2026-11-06T00:00:42.000Z",
+      "at": 42,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-home",
+        "title": "返回设计区整理品牌交付说明"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:33",
+      "sequence": 33,
+      "occurredAt": "2026-11-06T00:00:42.000Z",
+      "at": 42,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-home",
+        "title": "返回研发区协调实现与检查"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:34",
+      "sequence": 34,
+      "occurredAt": "2026-11-06T00:00:42.000Z",
+      "at": 42,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-home",
+        "title": "返回研究策划区整理研究说明"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:35",
+      "sequence": 35,
+      "occurredAt": "2026-11-06T00:00:50.000Z",
+      "at": 50,
+      "type": "worker.spawned",
+      "payload": {
+        "agentId": "test",
+        "parentAgentId": "dev-lead"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:36",
+      "sequence": 36,
+      "occurredAt": "2026-11-06T00:00:50.000Z",
+      "at": 50,
+      "type": "task.assigned",
+      "payload": {
+        "agentId": "test",
+        "taskId": "test",
+        "title": "检查首页内容、链接和品牌一致性（模拟）"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:37",
+      "sequence": 37,
+      "occurredAt": "2026-11-06T00:00:51.000Z",
+      "at": 51,
+      "type": "task.started",
+      "payload": {
+        "agentId": "test"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:38",
+      "sequence": 38,
+      "occurredAt": "2026-11-06T00:00:55.000Z",
+      "at": 55,
+      "type": "task.finished",
+      "payload": {
+        "agentId": "frontend"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:39",
+      "sequence": 39,
+      "occurredAt": "2026-11-06T00:00:55.000Z",
+      "at": 55,
+      "type": "worker.removed",
+      "payload": {
+        "agentId": "frontend"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:40",
+      "sequence": 40,
+      "occurredAt": "2026-11-06T00:01:00.000Z",
+      "at": 60,
+      "type": "task.finished",
+      "payload": {
+        "agentId": "test"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:41",
+      "sequence": 41,
+      "occurredAt": "2026-11-06T00:01:00.000Z",
+      "at": 60,
+      "type": "worker.removed",
+      "payload": {
+        "agentId": "test"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:42",
+      "sequence": 42,
+      "occurredAt": "2026-11-06T00:01:01.000Z",
+      "at": 61,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-delivery",
+        "title": "将品牌方案送至成果台"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:43",
+      "sequence": 43,
+      "occurredAt": "2026-11-06T00:01:01.000Z",
+      "at": 61,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-delivery",
+        "title": "将网站预览与检查清单送至成果台"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:44",
+      "sequence": 44,
+      "occurredAt": "2026-11-06T00:01:01.000Z",
+      "at": 61,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-delivery",
+        "title": "汇总研究依据，加入成果交付"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:45",
+      "sequence": 45,
+      "occurredAt": "2026-11-06T00:01:11.000Z",
+      "at": 71,
+      "type": "artifact.delivered",
+      "payload": {
+        "artifactId": "brand-kit"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:46",
+      "sequence": 46,
+      "occurredAt": "2026-11-06T00:01:11.000Z",
+      "at": 71,
+      "type": "artifact.delivered",
+      "payload": {
+        "artifactId": "website-preview"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:47",
+      "sequence": 47,
+      "occurredAt": "2026-11-06T00:01:11.000Z",
+      "at": 71,
+      "type": "artifact.delivered",
+      "payload": {
+        "artifactId": "mock-checklist"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:48",
+      "sequence": 48,
+      "occurredAt": "2026-11-06T00:01:15.000Z",
+      "at": 75,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-standby",
+        "title": "交付结束，返回待命区等待新目标"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:49",
+      "sequence": 49,
+      "occurredAt": "2026-11-06T00:01:15.000Z",
+      "at": 75,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-standby",
+        "title": "交付结束，返回待命区等待新目标"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:50",
+      "sequence": 50,
+      "occurredAt": "2026-11-06T00:01:15.000Z",
+      "at": 75,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-standby",
+        "title": "返回休息区阅读与待命"
+      }
+    },
+    {
+      "schemaVersion": "m1-mock/1",
+      "source": "mock",
+      "scenarioId": "brand-website-b1-three-leads-v1",
+      "runId": "local-demo",
+      "eventId": "brand-website-b1-three-leads-v1:51",
+      "sequence": 51,
+      "occurredAt": "2026-11-06T00:01:28.000Z",
+      "at": 88,
+      "type": "simulation.finished",
+      "payload": {
+        "summary": "三份 Mock 成果已交付并保留阅读入口。三位负责人回到休息区入座，临时子 Agent 均已释放。女性接待继续提供导览。没有调用真实 Agent 或发布网站。"
+      }
+    }
+  ],
+  "chapter": "交付完成 · 团队待命",
+  "message": "三份 Mock 成果已交付并保留阅读入口。三位负责人回到休息区入座，临时子 Agent 均已释放。女性接待继续提供导览。没有调用真实 Agent 或发布网站。",
+  "artifacts": [
+    "brand-kit",
+    "website-preview",
+    "mock-checklist"
+  ],
+  "handoff": {
+    "from": "design-lead",
+    "to": "dev-lead",
+    "summary": "交接品牌研究摘要：面向独立创作者，以温暖、清晰、可信赖为方向。",
+    "artifactId": "brief-draft"
+  },
+  "meeting": {
+    "topic": "确认品牌方向与首页信息层级",
+    "summary": "设计：暖白 / 青绿，主张「让好想法开始生长」。研发：首屏主张 → 核心价值 → 联系入口。共同建议先完成单页展示站。"
+  },
+  "decision": {
+    "id": "brand-direction",
+    "title": "采用「温暖、清晰、可信赖」的品牌方向？",
+    "summary": "批准后，研发将按暖白与青绿的视觉方案完成单页网站，测试 Agent 再做模拟检查。此决定仅作用于当前 Mock 演示。",
+    "status": "approved"
+  }
+}

@@ -1,0 +1,414 @@
+{
+  "schemaVersion": "m1-mock/1",
+  "scenarioId": "brand-website-b1-three-leads-v1",
+  "source": "mock",
+  "goal": "帮我制作一个品牌网站。",
+  "events": [
+    {
+      "at": 0,
+      "type": "goal.created",
+      "payload": {
+        "title": "帮我制作一个品牌网站。"
+      }
+    },
+    {
+      "at": 1.5,
+      "type": "organization.recommended",
+      "payload": {
+        "summary": "推荐研究策划、品牌设计与网站研发三部门：研究负责人整理定位，设计负责人组织视觉工作，研发负责人组织前端和测试。"
+      }
+    },
+    {
+      "at": 3,
+      "type": "department.activated",
+      "payload": {
+        "departmentId": "design"
+      }
+    },
+    {
+      "at": 3,
+      "type": "department.activated",
+      "payload": {
+        "departmentId": "dev"
+      }
+    },
+    {
+      "at": 3,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-office",
+        "title": "回到设计办公位统筹品牌方向与研究任务"
+      }
+    },
+    {
+      "at": 3,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-office",
+        "title": "回到研发办公位规划网站结构与执行任务"
+      }
+    },
+    {
+      "at": 3,
+      "type": "department.activated",
+      "payload": {
+        "departmentId": "research"
+      }
+    },
+    {
+      "at": 3,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-office",
+        "title": "前往研究策划区整理目标用户与品牌定位"
+      }
+    },
+    {
+      "at": 4,
+      "type": "task.assigned",
+      "payload": {
+        "agentId": "research-lead",
+        "taskId": "research",
+        "title": "整理目标用户、品牌定位与参考方向"
+      }
+    },
+    {
+      "at": 5,
+      "type": "task.started",
+      "payload": {
+        "agentId": "research-lead"
+      }
+    },
+    {
+      "at": 7,
+      "type": "worker.spawned",
+      "payload": {
+        "agentId": "visual",
+        "parentAgentId": "design-lead"
+      }
+    },
+    {
+      "at": 7,
+      "type": "task.assigned",
+      "payload": {
+        "agentId": "visual",
+        "taskId": "visual",
+        "title": "制作暖白与青绿的品牌视觉方向"
+      }
+    },
+    {
+      "at": 8,
+      "type": "task.started",
+      "payload": {
+        "agentId": "visual"
+      }
+    },
+    {
+      "at": 10,
+      "type": "worker.spawned",
+      "payload": {
+        "agentId": "frontend",
+        "parentAgentId": "dev-lead"
+      }
+    },
+    {
+      "at": 10,
+      "type": "task.assigned",
+      "payload": {
+        "agentId": "frontend",
+        "taskId": "frontend",
+        "title": "规划首页结构，等待品牌方向确认"
+      }
+    },
+    {
+      "at": 11,
+      "type": "task.started",
+      "payload": {
+        "agentId": "frontend"
+      }
+    },
+    {
+      "at": 12,
+      "type": "task.finished",
+      "payload": {
+        "agentId": "research-lead"
+      }
+    },
+    {
+      "at": 13,
+      "type": "task.handoff",
+      "payload": {
+        "from": "research-lead",
+        "to": "design-lead",
+        "taskId": "research",
+        "artifactId": "research-brief",
+        "summary": "研究负责人向设计负责人交接定位摘要：面向独立创作者，以温暖、清晰、可信赖为方向。"
+      }
+    },
+    {
+      "at": 15,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "handoff",
+        "title": "在讨论区交接品牌研究摘要"
+      }
+    },
+    {
+      "at": 15,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-handoff",
+        "title": "在讨论区接收品牌研究摘要"
+      }
+    },
+    {
+      "at": 23,
+      "type": "task.handoff",
+      "payload": {
+        "from": "design-lead",
+        "to": "dev-lead",
+        "taskId": "brand-brief",
+        "artifactId": "brief-draft",
+        "summary": "交接品牌研究摘要：面向独立创作者，以温暖、清晰、可信赖为方向。"
+      }
+    },
+    {
+      "at": 25,
+      "type": "collaboration.started",
+      "payload": {
+        "topic": "品牌方向与首页首屏如何保持一致？"
+      }
+    },
+    {
+      "at": 25,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-meeting",
+        "title": "携带品牌提案前往共享讨论区"
+      }
+    },
+    {
+      "at": 25,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-meeting",
+        "title": "携带首页结构前往共享讨论区"
+      }
+    },
+    {
+      "at": 25,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-meeting",
+        "title": "携带研究摘要加入品牌方向讨论"
+      }
+    },
+    {
+      "at": 36,
+      "type": "meeting.started",
+      "payload": {
+        "topic": "确认品牌方向与首页信息层级",
+        "summary": "设计：暖白 / 青绿，主张「让好想法开始生长」。研发：首屏主张 → 核心价值 → 联系入口。共同建议先完成单页展示站。"
+      }
+    },
+    {
+      "at": 40,
+      "type": "decision.requested",
+      "payload": {
+        "decisionId": "brand-direction",
+        "title": "采用「温暖、清晰、可信赖」的品牌方向？",
+        "summary": "批准后，研发将按暖白与青绿的视觉方案完成单页网站，测试 Agent 再做模拟检查。此决定仅作用于当前 Mock 演示。"
+      }
+    },
+    {
+      "at": 41,
+      "type": "task.finished",
+      "payload": {
+        "agentId": "visual"
+      }
+    },
+    {
+      "at": 41,
+      "type": "worker.removed",
+      "payload": {
+        "agentId": "visual"
+      }
+    },
+    {
+      "at": 41,
+      "type": "task.started",
+      "payload": {
+        "agentId": "frontend"
+      }
+    },
+    {
+      "at": 42,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-home",
+        "title": "返回设计区整理品牌交付说明"
+      }
+    },
+    {
+      "at": 42,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-home",
+        "title": "返回研发区协调实现与检查"
+      }
+    },
+    {
+      "at": 42,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-home",
+        "title": "返回研究策划区整理研究说明"
+      }
+    },
+    {
+      "at": 50,
+      "type": "worker.spawned",
+      "payload": {
+        "agentId": "test",
+        "parentAgentId": "dev-lead"
+      }
+    },
+    {
+      "at": 50,
+      "type": "task.assigned",
+      "payload": {
+        "agentId": "test",
+        "taskId": "test",
+        "title": "检查首页内容、链接和品牌一致性（模拟）"
+      }
+    },
+    {
+      "at": 51,
+      "type": "task.started",
+      "payload": {
+        "agentId": "test"
+      }
+    },
+    {
+      "at": 55,
+      "type": "task.finished",
+      "payload": {
+        "agentId": "frontend"
+      }
+    },
+    {
+      "at": 55,
+      "type": "worker.removed",
+      "payload": {
+        "agentId": "frontend"
+      }
+    },
+    {
+      "at": 60,
+      "type": "task.finished",
+      "payload": {
+        "agentId": "test"
+      }
+    },
+    {
+      "at": 60,
+      "type": "worker.removed",
+      "payload": {
+        "agentId": "test"
+      }
+    },
+    {
+      "at": 61,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-delivery",
+        "title": "将品牌方案送至成果台"
+      }
+    },
+    {
+      "at": 61,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-delivery",
+        "title": "将网站预览与检查清单送至成果台"
+      }
+    },
+    {
+      "at": 61,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-delivery",
+        "title": "汇总研究依据，加入成果交付"
+      }
+    },
+    {
+      "at": 71,
+      "type": "artifact.delivered",
+      "payload": {
+        "artifactId": "brand-kit"
+      }
+    },
+    {
+      "at": 71,
+      "type": "artifact.delivered",
+      "payload": {
+        "artifactId": "website-preview"
+      }
+    },
+    {
+      "at": 71,
+      "type": "artifact.delivered",
+      "payload": {
+        "artifactId": "mock-checklist"
+      }
+    },
+    {
+      "at": 75,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "design-lead",
+        "route": "design-standby",
+        "title": "交付结束，返回待命区等待新目标"
+      }
+    },
+    {
+      "at": 75,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "dev-lead",
+        "route": "dev-standby",
+        "title": "交付结束，返回待命区等待新目标"
+      }
+    },
+    {
+      "at": 75,
+      "type": "agent.movement",
+      "payload": {
+        "agentId": "research-lead",
+        "route": "research-standby",
+        "title": "返回休息区阅读与待命"
+      }
+    },
+    {
+      "at": 88,
+      "type": "simulation.finished",
+      "payload": {
+        "summary": "三份 Mock 成果已交付并保留阅读入口。三位负责人回到休息区入座，临时子 Agent 均已释放。女性接待继续提供导览。没有调用真实 Agent 或发布网站。"
+      }
+    }
+  ]
+}

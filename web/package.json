@@ -1,0 +1,30 @@
+{
+  "name": "agent-office-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5174 --strictPort",
+    "check": "tsc --noEmit",
+    "test": "node tests/world.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "test:production": "node tests/production.mjs",
+    "test:repository": "node tests/repository.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "vite": "8.3.5",
+    "typescript": "~5.9.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "playwright": "1.64.1"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}
